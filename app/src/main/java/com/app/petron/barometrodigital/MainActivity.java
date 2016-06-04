@@ -11,13 +11,17 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
+
 import com.startapp.android.publish.StartAppAd;
 import com.startapp.android.publish.StartAppSDK;
 
 public class MainActivity extends AppCompatActivity implements SensorEventListener {
 
-    private TextView barometrotext;
+    private TextView barometrotext,estado_sensor;
+    private ImageView exite_ter;
     private StartAppAd startAppAd = new StartAppAd(this);
 
     @Override
@@ -26,11 +30,24 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
         StartAppSDK.init(this, "101423750", "205476544", true);
         setContentView(R.layout.activity_main);
         barometrotext = (TextView) findViewById(R.id.barometrotext);
+        estado_sensor = (TextView) findViewById(R.id.estado_sensor);
+        estado_sensor.setText(R.string.estado_sensor);
+        exite_ter = (ImageView) findViewById(R.id.imagen_existe_termometro);
+
+
+        //Cargamos el sensor de presión
         SensorManager snsMgr = (SensorManager) getSystemService(Service.SENSOR_SERVICE);
-
         Sensor pS = snsMgr.getDefaultSensor(Sensor.TYPE_PRESSURE);
-
         snsMgr.registerListener(this, pS, SensorManager.SENSOR_DELAY_UI);
+        if (pS == null){
+            Toast.makeText(getApplicationContext(), getString(R.string.no_sensor), Toast.LENGTH_SHORT).show();
+            exite_ter.setImageResource(R.mipmap.imagen_aspa);
+        }
+        else{
+            Toast.makeText(getApplicationContext(), getString(R.string.si_sensor), Toast.LENGTH_SHORT).show();
+            exite_ter.setImageResource(R.mipmap.imagen_ok);
+            snsMgr.registerListener(this, pS, SensorManager.SENSOR_DELAY_NORMAL);
+        }
     }
 
     @Override

@@ -4,4 +4,8 @@
     <string name="presi_n_mbr">Presión (mBar)</string>
     <string name="votar"> Votar</string>
     <string name="salir">Salir </string>
+    <string name="estado_sensor">Sensor presión</string>
+    <string name="no_sensor">No hay sensor de presión</string>
+    <string name="si_sensor">Hay sensor de presión</string>
+    <string name="sensor_ambiente">Sensor presión</string>
 </resources>
