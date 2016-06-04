@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Barómetro Digital</string>
+    <string name="_0">0</string>
+    <string name="presi_n_mbr">Presión (mBar)</string>
+    <string name="votar"> Votar</string>
+    <string name="salir">Salir </string>
+</resources>
