@@ -20,8 +20,9 @@ import com.startapp.android.publish.StartAppSDK;
 
 public class MainActivity extends AppCompatActivity implements SensorEventListener {
 
-    private TextView barometrotext,estado_sensor;
+    private TextView barometrotext,estado_sensor,altitudtext;
     private ImageView exite_ter;
+    private float altitud = 0;
     private StartAppAd startAppAd = new StartAppAd(this);
 
     @Override
@@ -30,6 +31,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
         StartAppSDK.init(this, "101423750", "205476544", true);
         setContentView(R.layout.activity_main);
         barometrotext = (TextView) findViewById(R.id.barometrotext);
+        altitudtext = (TextView) findViewById(R.id.altitudtxt);
         estado_sensor = (TextView) findViewById(R.id.estado_sensor);
         estado_sensor.setText(R.string.estado_sensor);
         exite_ter = (ImageView) findViewById(R.id.imagen_existe_termometro);
@@ -72,9 +74,12 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
     @Override
     public void onSensorChanged(SensorEvent event) {
         float[] values = event.values;
-        String redondeo;
+        String redondeo,redondeoaltitud;
         redondeo = String.format("%.1f", values[0]);
+        altitud = SensorManager.getAltitude(SensorManager.PRESSURE_STANDARD_ATMOSPHERE,values[0]);
         barometrotext.setText(redondeo);
+        redondeoaltitud = String.format("%.1f",altitud);
+        altitudtext.setText(redondeoaltitud);
 
     }
 
