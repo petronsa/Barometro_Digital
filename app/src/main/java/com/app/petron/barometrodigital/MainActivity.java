@@ -15,8 +15,18 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.startapp.android.publish.StartAppAd;
-import com.startapp.android.publish.StartAppSDK;
+import com.startapp.android.publish.ads.nativead.NativeAdDetails;
+import com.startapp.android.publish.ads.nativead.NativeAdPreferences;
+import com.startapp.android.publish.ads.nativead.StartAppNativeAd;
+import com.startapp.android.publish.ads.splash.SplashConfig;
+import com.startapp.android.publish.ads.splash.SplashConfig.Theme;
+import com.startapp.android.publish.adsCommon.Ad;
+import com.startapp.android.publish.adsCommon.StartAppAd;
+import com.startapp.android.publish.adsCommon.StartAppAd.AdMode;
+import com.startapp.android.publish.adsCommon.StartAppSDK;
+import com.startapp.android.publish.adsCommon.VideoListener;
+import com.startapp.android.publish.adsCommon.adListeners.AdDisplayListener;
+import com.startapp.android.publish.adsCommon.adListeners.AdEventListener;
 
 public class MainActivity extends AppCompatActivity implements SensorEventListener {
 
@@ -116,12 +126,6 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
 
         switch (item.getItemId()) {
 
-            case R.id.votar:
-                //botón votar
-                Uri uriUrl = Uri.parse("https://play.google.com/store/apps/details?id=company.petron.termometro_digital");
-                Intent intent = new Intent(Intent.ACTION_VIEW, uriUrl);
-                startActivity(intent);
-                return true;
             case R.id.salir:
                 //botón salir
                 MainActivity.this.startAppAd.showAd();

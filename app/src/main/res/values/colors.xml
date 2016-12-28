@@ -5,4 +5,5 @@
     <color name="colorAccent">#ff9800</color>
     <color name="primary_text">#212121</color>
     <color name="secondary_text">#727272</color>
+    <color name="temperatura">#0288d1</color>
 </resources>

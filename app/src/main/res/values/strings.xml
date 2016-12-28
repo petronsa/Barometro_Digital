@@ -8,4 +8,5 @@
     <string name="no_sensor">No hay sensor de presión</string>
     <string name="si_sensor">Hay sensor de presión</string>
     <string name="sensor_ambiente">Sensor presión</string>
+    <string name="altitud">Altitud (m)</string>
 </resources>
