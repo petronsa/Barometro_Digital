@@ -1,8 +1,8 @@
 <resources>
     <string name="app_name">Barómetro Digital</string>
-    <string name="_0">0</string>
+    <string name="_0" translatable="false">0</string>
     <string name="presi_n_mbr">Presión (mBar)</string>
-    <string name="votar"> Votar</string>
+    <string name="votar" translatable="false"> Votar</string>
     <string name="salir">Salir </string>
     <string name="estado_sensor">Sensor presión</string>
     <string name="no_sensor">No hay sensor de presión</string>

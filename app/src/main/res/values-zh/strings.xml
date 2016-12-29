@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">數字晴雨表</string>
+    <string name="altitud">海拔高度（米）</string>
+    <string name="estado_sensor">壓力傳感器</string>
+    <string name="no_sensor">無壓力傳感器</string>
+    <string name="presi_n_mbr">壓力（MBR）</string>
+    <string name="salir">出口</string>
+    <string name="si_sensor">有壓力傳感器</string>
+    <string name="sensor_ambiente">壓力傳感器</string>
+</resources>

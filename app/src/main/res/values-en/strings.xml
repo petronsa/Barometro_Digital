@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Digital Barometer</string>
+    <string name="altitud">Altitude (m)</string>
+    <string name="estado_sensor">Pressure Sensor</string>
+    <string name="no_sensor">No pressure sensor</string>
+    <string name="presi_n_mbr">Pressure (mbr)</string>
+    <string name="salir">Exit</string>
+    <string name="sensor_ambiente">Pressure Sensor</string>
+    <string name="si_sensor">There is pressure sensor</string>
+</resources>
